@@ -10,9 +10,9 @@ var loaderUtils = require("loader-utils");
 
 var baseRegex = "\\s*[@#]\\s*sourceMappingURL\\s*=\\s*([^\\s]*)",
 	// Matches /* ... */ comments
-	regex1 = new RegExp("/\\*"+baseRegex+"\\s*\\*/"),
+	regex1 = new RegExp("/\\*"+baseRegex+"\\s*\\*/[\\s|\n|\r\n?]*$"),
 	// Matches // .... comments
-	regex2 = new RegExp("//"+baseRegex+"($|\n|\r\n?)"),
+	regex2 = new RegExp("//"+baseRegex+"[\\s|\n|\r\n?]*$"),
 	// Matches DataUrls
 	regexDataUrl = /data:[^;\n]+;base64,(.*)/;
 
